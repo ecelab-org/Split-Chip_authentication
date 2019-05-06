@@ -176,7 +176,7 @@ module privateKeyGen #(
     assign concatenatedX[17-1:e_WIDTH] = {17-e_WIDTH{1'b0}};  //if e_WIDTH=17 then this line should be commented out
     assign concatenatedX[e_WIDTH-1:0] = X;
 
-    CW_mult_seq #(.a_width(17), .b_width(2*HALF_KEY_LENGTH), .num_cyc(17)) CW_mult_seq (
+    mult_seq #(.a_width(17), .b_width(2*HALF_KEY_LENGTH), .num_cyc(17)) mult_seq (
         .clk(clk), 
         .rst_n(rst), 
         .hold(1'b0), 
@@ -187,7 +187,7 @@ module privateKeyGen #(
         .product(f_n_times_X)
     );
 
-    CW_div_seq #(.a_width(((2*HALF_KEY_LENGTH)+e_WIDTH)+1), .b_width(e_WIDTH), .num_cyc(((2*HALF_KEY_LENGTH)+e_WIDTH)+1)) CW_div_seq (
+    div_seq #(.a_width(((2*HALF_KEY_LENGTH)+e_WIDTH)+1), .b_width(e_WIDTH), .num_cyc(((2*HALF_KEY_LENGTH)+e_WIDTH)+1)) div_seq (
         .clk(clk), 
         .rst_n(rst), 
         .hold(1'b0), 
