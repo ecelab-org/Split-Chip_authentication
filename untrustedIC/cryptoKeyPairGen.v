@@ -28,7 +28,7 @@ module cryptoKeyPairGen #(
         parameter KEY_LENGTH = 32,
         parameter integer HALF_KEY_LENGTH = 0.5 * KEY_LENGTH,
         parameter e_WIDTH = 3  // set minimum of 3
-    )(
+)(
         input clk,
         input rst,
         input [(8*KEY_LENGTH)-1 : 0] noisyIn, // 16*HALF_KEY_LENGTH
