@@ -23,7 +23,6 @@
 `include "__timescale.v"
 `include "__parameters.vh"
 
-
 module montgomery_r_c #(
         parameter MONTGOMERY_MODULE_KEY_LENGTH = 512
     )(
