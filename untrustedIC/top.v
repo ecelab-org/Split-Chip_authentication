@@ -34,7 +34,6 @@ module top_untrustedIC #(
         output SPI_MOSI
     );
 
-
     wire modExp_rst, cryptoKeyPairGen_modExp_rst, modExp_start, cryptoKeyPairGen_modExp_start, modExp_ready, cryptoKeyPairGen_modExp_ready;
     reg decrypt_modExp_rst, decryptionStart;
     wire [511:0] modExp_x, cryptoKeyPairGen_modExp_x, modExp_m, cryptoKeyPairGen_modExp_m, modExp_out, cryptoKeyPairGen_modExp_out;
@@ -99,7 +98,7 @@ module top_untrustedIC #(
     assign publicExponent = 3'b011; 
 //    assign publicExponent[e_WIDTH-1:0] = 'b10000000000000001;   // we can choose a small e, such as 3, to reduce the exponentiation
                                                                 // effort for encryption/decryption at later stages. However the search
-																// space for finding correct primes will increase and we have to try
+                                                                // space for finding correct primes will increase and we have to try
                                                                 // several prime pairs in order to find a valid pair (f_n % e != 0).
 
     // SPI receive
@@ -272,7 +271,6 @@ module top_untrustedIC #(
             end
         endcase
     end
-
 
     localparam [9:0] MODEXP_Y_SIZE = KEY_LENGTH+e_WIDTH;
 
