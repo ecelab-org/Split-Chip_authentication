@@ -24,7 +24,6 @@
 `include "__timescale.v"
 `include "__parameters.vh"
 
-
 module cryptoKeyPairGen #(
         parameter KEY_LENGTH = 32,
         parameter integer HALF_KEY_LENGTH = 0.5 * KEY_LENGTH,
@@ -66,7 +65,6 @@ module cryptoKeyPairGen #(
     reg privateKeyGen_rst;
     wire [HALF_KEY_LENGTH-1:0] noiseFilterOut;
     wire noiseFilterReady;
-
 
     noiseFilter #(.HALF_KEY_LENGTH(HALF_KEY_LENGTH)) noiseFilter (
         .clk(clk), 
@@ -115,7 +113,6 @@ module cryptoKeyPairGen #(
         .privateKey(privateKey_sig)
     );
 
-
     reg [2:0] state, next_state;
     localparam STATE_OFF = 3'd0;
     localparam STATE_NOISE_FILTER = 3'd1;
@@ -123,7 +120,6 @@ module cryptoKeyPairGen #(
     localparam STATE_GCD = 3'd3;
     localparam STATE_PRIVATE_KEY_GENERATOR = 3'd4;
     localparam STATE_READY = 3'd5;
-
 
     always @(posedge clk) begin
         if (rst == 0) begin
@@ -337,6 +333,5 @@ module cryptoKeyPairGen #(
             end
         endcase
     end
-
 
 endmodule
