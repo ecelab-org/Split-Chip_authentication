@@ -173,7 +173,7 @@ module GCD #(
         endcase
     end
 
-    CW_mult_seq #(.a_width(HALF_KEY_LENGTH), .b_width(HALF_KEY_LENGTH), .num_cyc(HALF_KEY_LENGTH)) CW_mult_seq (
+    mult_seq #(.a_width(HALF_KEY_LENGTH), .b_width(HALF_KEY_LENGTH), .num_cyc(HALF_KEY_LENGTH)) mult_seq (
         .clk(clk), 
         .rst_n(rst), 
         .hold(1'b0), 
@@ -184,7 +184,7 @@ module GCD #(
         .product(MOD_sig)
     );
 
-    CW_div_seq #(.a_width(2*HALF_KEY_LENGTH), .b_width(e_WIDTH), .num_cyc(2*HALF_KEY_LENGTH)) CW_div_seq (
+    div_seq #(.a_width(2*HALF_KEY_LENGTH), .b_width(e_WIDTH), .num_cyc(2*HALF_KEY_LENGTH)) div_seq (
         .clk(clk), 
         .rst_n(rst), 
         .hold(1'b0), 
