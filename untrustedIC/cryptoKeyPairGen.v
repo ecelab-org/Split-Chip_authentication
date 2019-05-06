@@ -24,6 +24,7 @@
 `include "__timescale.v"
 `include "__parameters.vh"
 
+
 module cryptoKeyPairGen #(
         parameter KEY_LENGTH = 32,
         parameter integer HALF_KEY_LENGTH = 0.5 * KEY_LENGTH,
