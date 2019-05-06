@@ -117,7 +117,7 @@ module montgomery_r_c #(
 
     localparam [1056:0] a = 1'b1 << 1056;
 
-    CW_div_seq #(.a_width(1057), .b_width(MONTGOMERY_MODULE_KEY_LENGTH), .num_cyc(1057)) CW_div_seq (
+    div_seq #(.a_width(1057), .b_width(MONTGOMERY_MODULE_KEY_LENGTH), .num_cyc(1057)) div_seq (
         .clk(clk), 
         .rst_n(rst), 
         .hold(1'b0), 
